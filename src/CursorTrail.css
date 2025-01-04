@@ -1,0 +1,30 @@
+/* Create a container for the cursor trail */
+.cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  /* Style the trail line */
+  .trail-line {
+    position: absolute;
+    height: 3px; /* Thicker for a more visible effect */
+    background: linear-gradient(45deg, rgba(55, 67, 79, 0.7), rgba(0, 255, 255, 0.5)); /* Gradient color */
+    border-radius: 50%;
+    transform-origin: 0% 0%;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-out, transform 0.1s ease-out;
+    pointer-events: none; /* Avoid interaction with the trail */
+    box-shadow: 0 0 15px rgba(19, 19, 19, 0.5); /* Glow effect */
+  }
+  
+  /* Optional: Apply some smooth fade-out effect */
+  .cursor-trail .trail-line:nth-child(n+10) {
+    opacity: 0.3;
+  }
+  
+  

@@ -1,0 +1,132 @@
+/* General container */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #f9f9f9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideIn 1s ease-out forwards;
+  }
+  
+  /* Slide-in animation */
+  @keyframes slideIn {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Header style */
+  .contact-header {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    animation: popIn 0.5s ease-out;
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Form styling */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Form field styling */
+  .form-field {
+    position: relative;
+  }
+  
+  .label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+    transition: color 0.3s;
+  }
+  
+  .input, .textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .input:focus, .textarea:focus {
+    border-color: #00b3b3;
+    box-shadow: 0 0 10px rgba(0, 179, 179, 0.3);
+  }
+  
+  .input:focus ~ .label, .textarea:focus ~ .label {
+    color: #00b3b3;
+    transform: translateY(-25px);
+  }
+  
+  /* Textarea specific */
+  .textarea {
+    resize: vertical;
+  }
+  
+  /* Submit button styling */
+  .submit-btn {
+    background-color: #00b3b3;
+    color: #fff;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #008080;
+    transform: scale(1.05);
+  }
+  
+  .submit-btn:active {
+    transform: scale(1);
+  }
+  
+  /* Animating the form fields */
+  @keyframes fieldAnimation {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .form-field:nth-child(1) {
+    animation: fieldAnimation 1s ease-out 0.5s forwards;
+  }
+  
+  .form-field:nth-child(2) {
+    animation: fieldAnimation 1s ease-out 1s forwards;
+  }
+  
+  .form-field:nth-child(3) {
+    animation: fieldAnimation 1s ease-out 1.5s forwards;
+  }
+  

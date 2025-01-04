@@ -1,0 +1,162 @@
+/* Home Container */
+.home-container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background: linear-gradient(45deg, #ff6b6b, #ff9e2c, #ffcd00); /* Popping gradient background */
+    background-size: 300% 300%;
+    animation: gradientAnimation 3s ease infinite;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title Styling */
+  .home-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 3px solid transparent;
+    background-image: linear-gradient(to right, #ff6b6b, #ff9e2c);
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    animation: titleAnimation 2s ease-in-out forwards;
+  }
+  
+  /* Title underline animation */
+  @keyframes titleAnimation {
+    0% {
+      background-size: 0 3px;
+    }
+    100% {
+      background-size: 100% 3px;
+    }
+  }
+  
+  /* Description Styling */
+  .home-description {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-weight: 500;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeIn 2s ease-out 1s forwards;
+  }
+  
+  /* Image Styling */
+  .image-container {
+    margin-top: 30px;
+    animation: scaleUp 2s ease-out forwards;
+  }
+  
+  .profile-image {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  /* Image Hover Effect */
+  .profile-image:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+  
+  /* Social Links */
+  .social-links {
+    margin-top: 30px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-5px);
+    background-color: #ff6b6b;
+    color: #fff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Social Media Link Hover Glow */
+  .github:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .linkedin:hover {
+    background-color: #0077b5;
+    color: #fff;
+  }
+  
+  .twitter:hover {
+    background-color: #1da1f2;
+    color: #fff;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.8);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  /* Gradient Animation */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+/* Custom Cursor */
+.cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+  
+  /* Cursor Scaling on Hover */
+  a:hover .cursor,
+  button:hover .cursor {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+    

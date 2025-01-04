@@ -1,0 +1,59 @@
+/* App.css */
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000; /* Black background */
+}
+
+/* Heading styling */
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  border-bottom: 3px solid transparent;
+  background-image: linear-gradient(to right, #ff6b6b, #ff9e2c);
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  animation: titleAnimation 2s ease-in-out forwards;
+}
+
+/* Title underline animation */
+@keyframes titleAnimation {
+  0% {
+    background-size: 0 3px;
+  }
+  100% {
+    background-size: 100% 3px;
+  }
+}
+
+/* Main App container with black background */
+.App {
+  text-align: center;
+  padding: 20px;
+  background: black; /* Set background to black */
+  color: white; /* Ensure text is white on black background */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient animation for background */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

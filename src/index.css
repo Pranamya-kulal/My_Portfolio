@@ -1,0 +1,82 @@
+/* Tailwind CSS imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #000; /* Set the background to black */
+  color: #fff; /* Change text color to white for contrast */
+}
+
+/* Apply flexbox to the main App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header, footer {
+  background-color: #282c34; /* Dark background for header and footer */
+  color: #fff;
+}
+
+header {
+  padding: 20px;
+  border-bottom: 2px solid #ff6b6b; /* Popping color at the bottom */
+}
+
+footer {
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #333; /* Dark background for footer */
+  border-top: 2px solid #ff6b6b; /* Adding a pop of color to footer */
+}
+
+/* Make sure content has proper spacing */
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Add styles for links */
+a {
+  text-decoration: none;
+  color: #ff6b6b; /* Add color to links to match the vibrant theme */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff9e2c; /* Hover effect with another vibrant color */
+}
+
+/* Responsive breakpoints for mobile */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+  }
+}
