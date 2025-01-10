@@ -5,20 +5,19 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "My portfolio website built with React and Webpack.",
   "dependencies": {
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.17.0",
     "lottie-react": "^2.4.0",
     "lottie-web": "^5.12.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.4.0",
     "react-responsive": "^10.0.0",
     "react-router-dom": "^7.1.1",
