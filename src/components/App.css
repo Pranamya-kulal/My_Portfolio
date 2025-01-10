@@ -100,7 +100,7 @@ footer p {
   height: 12px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
-  animation: meteor-shower 1s infinite;
+  animation: meteor-shower 10s infinite;
 }
 
 @keyframes meteor-shower {

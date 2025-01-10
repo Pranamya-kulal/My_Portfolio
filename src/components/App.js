@@ -16,7 +16,7 @@ const App = () => {
           <ul className="flex justify-center space-x-4">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/projects">Projects</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/contact">Let’s connect</Link></li>
           </ul>
         </nav>
 
@@ -29,7 +29,7 @@ const App = () => {
         </main>
 
         <footer>
-          <p>Contact: myemail@example.com</p>
+          <p>Contact: pranamya444@gmail.com</p>
         </footer>
       </div>
     </Router>

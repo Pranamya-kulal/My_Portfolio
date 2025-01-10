@@ -1,132 +1,159 @@
-/* General container */
 .contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 50px;
-    background-color: #f9f9f9;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    transform: translateY(30px);
-    opacity: 0;
-    animation: slideIn 1s ease-out forwards;
-  }
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+  background: transparent;
+  align-items: center;
+  gap: 50px;
+}
+
+.contact-left {
+  flex: 1;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
   
-  /* Slide-in animation */
-  @keyframes slideIn {
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
+  /* Corner Glow Effect */
+  box-shadow: 
+    0 0 10px rgba(0, 179, 179, 0.3),   /* Soft Teal Glow */
+    0 0 20px rgba(0, 179, 179, 0.2),   /* Wider Glow */
+    inset 0 0 15px rgba(0, 179, 179, 0.1); /* Inner Glow */
   
-  /* Header style */
-  .contact-header {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    animation: popIn 0.5s ease-out;
-  }
-  
-  @keyframes popIn {
-    0% {
-      transform: scale(0.5);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
-  /* Form styling */
-  .contact-form {
-    display: flex;
+  border: 1px solid rgba(0, 179, 179, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Optional: Corner Highlight */
+.contact-left::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 22px;
+  border: 2px solid rgba(0, 179, 179, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.contact-left:hover::after {
+  opacity: 1;
+}
+
+/* Input Glow on Focus */
+.input:focus, 
+.textarea:focus {
+  border-color: #00b3b3;
+  box-shadow: 
+    0 0 10px rgba(0, 179, 179, 0.3),
+    0 0 15px rgba(0, 179, 179, 0.2);
+}
+
+
+.contact-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+.form-field {
+  position: relative;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #00b3b3;
+  box-shadow: 0 0 15px rgba(0, 179, 179, 0.5);
+}
+
+.invalid-email {
+  border-color: red;
+}
+
+.email-error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.submit-btn {
+  background-color: #355ba2;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #0d4386;
+  transform: scale(1.05);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.success-message {
+  color: #00b3b3;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-animation {
+  width: 100%;
+  max-height: 500px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
     flex-direction: column;
-    gap: 20px;
+    padding: 20px;
+    gap: 30px;
   }
-  
-  /* Form field styling */
-  .form-field {
-    position: relative;
-  }
-  
-  .label {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #555;
-    transition: color 0.3s;
-  }
-  
-  .input, .textarea {
+
+  .contact-left, .contact-right {
     width: 100%;
-    padding: 15px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease;
   }
-  
-  .input:focus, .textarea:focus {
-    border-color: #00b3b3;
-    box-shadow: 0 0 10px rgba(0, 179, 179, 0.3);
-  }
-  
-  .input:focus ~ .label, .textarea:focus ~ .label {
-    color: #00b3b3;
-    transform: translateY(-25px);
-  }
-  
-  /* Textarea specific */
-  .textarea {
-    resize: vertical;
-  }
-  
-  /* Submit button styling */
-  .submit-btn {
-    background-color: #00b3b3;
-    color: #fff;
-    padding: 15px;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    background-color: #008080;
-    transform: scale(1.05);
-  }
-  
-  .submit-btn:active {
-    transform: scale(1);
-  }
-  
-  /* Animating the form fields */
-  @keyframes fieldAnimation {
-    0% {
-      transform: scale(0.5);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
-  .form-field:nth-child(1) {
-    animation: fieldAnimation 1s ease-out 0.5s forwards;
-  }
-  
-  .form-field:nth-child(2) {
-    animation: fieldAnimation 1s ease-out 1s forwards;
-  }
-  
-  .form-field:nth-child(3) {
-    animation: fieldAnimation 1s ease-out 1.5s forwards;
-  }
-  
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

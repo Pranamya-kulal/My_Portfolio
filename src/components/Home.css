@@ -1,162 +1,514 @@
-/* Home Container */
-.home-container {
-    text-align: center;
-    margin-top: 50px;
-    padding: 20px;
-    background: linear-gradient(45deg, #ff6b6b, #ff9e2c, #ffcd00); /* Popping gradient background */
-    background-size: 300% 300%;
-    animation: gradientAnimation 3s ease infinite;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Title Styling */
-  .home-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-    border-bottom: 3px solid transparent;
-    background-image: linear-gradient(to right, #ff6b6b, #ff9e2c);
-    background-size: 100% 3px;
-    background-repeat: no-repeat;
-    animation: titleAnimation 2s ease-in-out forwards;
-  }
-  
-  /* Title underline animation */
-  @keyframes titleAnimation {
-    0% {
-      background-size: 0 3px;
-    }
-    100% {
-      background-size: 100% 3px;
-    }
-  }
-  
-  /* Description Styling */
-  .home-description {
-    font-size: 1.4rem;
-    color: #fff;
-    margin-bottom: 30px;
-    line-height: 1.8;
-    font-weight: 500;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0;
-    animation: fadeIn 2s ease-out 1s forwards;
-  }
-  
-  /* Image Styling */
-  .image-container {
-    margin-top: 30px;
-    animation: scaleUp 2s ease-out forwards;
-  }
-  
-  .profile-image {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-  
-  /* Image Hover Effect */
-  .profile-image:hover {
-    transform: scale(1.05);
-    filter: brightness(1.2);
-  }
-  
-  /* Social Links */
-  .social-links {
-    margin-top: 30px;
-  }
-  
-  .social-icon {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 15px 30px;
-    background-color: #fff;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .social-icon:hover {
-    transform: translateY(-5px);
-    background-color: #ff6b6b;
-    color: #fff;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Social Media Link Hover Glow */
-  .github:hover {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .linkedin:hover {
-    background-color: #0077b5;
-    color: #fff;
-  }
-  
-  .twitter:hover {
-    background-color: #1da1f2;
-    color: #fff;
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes scaleUp {
-    from {
-      transform: scale(0.8);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-  
-  /* Gradient Animation */
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-/* Custom Cursor */
+/* General styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Custom cursor */
 .cursor {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #ff6b6b;
-    border-radius: 50%;
-    pointer-events: none;
-    transition: all 0.1s ease;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+
+/* Hero section */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: slide-in 1.5s ease-out;
+}
+.hero-animation {
+  width: 350px;
+  height: 350px;
+  max-width: 100%;
+  object-fit: contain; /* Ensures full animation visibility */
+}
+
+@media (max-width: 768px) {
+  .hero-animation {
+    width: 250px;
+    height: 250px;
   }
-  
-  /* Cursor Scaling on Hover */
-  a:hover .cursor,
-  button:hover .cursor {
-    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.typing-effect {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  display: inline-block;
+}
+
+.typing-container {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
-    
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes slideUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+}
+
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  animation: fade-in 2s ease-in;
+}
+
+.social-icon {
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #3498db;
+}
+
+/* Skills Section */
+.skills-section {
+  margin: 40px 0;
+}
+
+.skills-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.skill-icon {
+  display: inline-block;
+  font-size: 3rem;
+  transition: transform 0.6s ease-in-out;
+  transform-origin: center;
+}
+
+.skill-icon:hover {
+  transform: rotate(360deg);
+}
+
+
+
+/* Education Section */
+.education-section {
+  margin: 40px 0;
+  animation: sectionGlow 3s infinite alternate; /* Glow animation */
+  position: relative;
+  padding: 20px;
+  background: #282727;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Glow Animation */
+@keyframes sectionGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.8);
+  }
+}
+
+.education-header {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  animation: slideIn 1s ease-in-out; /* Slide-in effect */
+}
+
+/* Slide-in Animation for Header */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.education-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Staggered Animation for List Items */
+.education-list li {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeStagger 0.8s forwards;
+  animation-delay: var(--delay);
+}
+
+/* Keyframes for List Fade-in */
+@keyframes fadeStagger {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dynamic Delay for Staggered Effect */
+.education-list li:nth-child(1) {
+  --delay: 0.2s;
+}
+.education-list li:nth-child(2) {
+  --delay: 0.4s;
+}
+.education-list li:nth-child(3) {
+  --delay: 0.6s;
+}
+
+/* Hover Effect */
+.education-list li:hover {
+  transform: scale(1.05);
+  color: #2980b9;
+  transition: all 0.3s ease-in-out;
+}
+/* Hero Section Layout */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.hero-text-column {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.hero-animation-column {
+  flex: 1;
+}
+
+/* Interactive Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px var(--skill-color);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  color: var(--skill-color);
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  color: white;
+  font-weight: bold;
+}
+/* Education Timeline with Advanced Styling */
+.education-timeline {
+  position: relative;
+  padding: 50px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+/* Vertical Gradient Line */
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(52, 152, 219, 0.3), 
+    rgba(52, 152, 219, 0.8)
+  );
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+}
+
+.education-item {
+  position: relative;
+  width: 45%;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.education-item.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Alternate Positioning with 3D Effect */
+.education-item:nth-child(odd) {
+  align-self: flex-start;
+  margin-right: auto;
+  transform: translateX(-50px) rotateY(-10deg) scale(0.8);
+}
+
+.education-item:nth-child(even) {
+  align-self: flex-end;
+  margin-left: auto;
+  transform: translateX(50px) rotateY(10deg) scale(0.8);
+}
+
+.education-item.visible:nth-child(odd) {
+  transform: translateX(0) rotateY(0) scale(1);
+}
+
+.education-item.visible:nth-child(even) {
+  transform: translateX(0) rotateY(0) scale(1);
+}
+
+/* Staggered Animation */
+.education-item:nth-child(1).visible {
+  transition-delay: 0.1s;
+}
+
+.education-item:nth-child(2).visible {
+  transition-delay: 0.2s;
+}
+
+.education-item:nth-child(3).visible {
+  transition-delay: 0.3s;
+}
+
+/* Timeline Dot with Pulse Animation */
+.education-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: 0 0 0 6px rgba(52, 152, 219, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.education-item:nth-child(odd)::before {
+  left: calc(100% + 15px);
+}
+
+.education-item:nth-child(even)::before {
+  right: calc(100% + 15px);
+}
+
+/* Animated Content Card */
+.education-content {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 10px 40px rgba(31, 38, 135, 0.37);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-content::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg, 
+    transparent, 
+    rgba(52, 152, 219, 0.1), 
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.education-content:hover {
+  transform: scale(1.05) translateZ(20px);
+  box-shadow: 0 15px 50px rgba(52, 152, 219, 0.4);
+}
+
+.education-content:hover::after {
+  transform: rotate(135deg);
+}
+
+/* Keyframe Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education-timeline::before {
+    left: 30px;
+  }
+
+  .education-item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .education-item:nth-child(odd),
+  .education-item:nth-child(even) {
+    transform: translateX(0) rotateY(0) scale(0.8);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .education-item.visible:nth-child(odd),
+  .education-item.visible:nth-child(even) {
+    transform: translateX(0) rotateY(0) scale(1);
+  }
+
+  .education-item::before {
+    left: -40px !important;
+  }
+}
+
+/* Enhanced Text Styling */
+.education-content h3 {
+  color: #3498db;
+  margin-bottom: 15px;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+}
+
+.education-content p {
+  color: #ecf0f1;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.education-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #3498db;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.education-content:hover .education-icon {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.education-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #3498db;
+  position: relative;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.education-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(
+    to right, 
+    transparent, 
+    #3498db, 
+    transparent
+  );
+}
+
+/* Hover Animation */
+.education-header:hover {
+  color: #2980b9;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .education-header {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+}
